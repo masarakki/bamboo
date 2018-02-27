@@ -1,0 +1,53 @@
+@import "~bootstrap/scss/bootstrap";
+
+html, body {
+  text-align: center;
+  height: 100%;
+}
+
+.content {
+  max-width: 42em;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column !important;
+
+}
+
+#header {
+  margin-top: 12px;
+  margin-bottom: auto !important;
+  width: 100%;
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, .5);
+
+  .info {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border: #335533 solid 2px;
+    border-radius: 10px;
+    width: 70%;
+  }
+}
+
+#footer {
+  padding-top: 20px;
+  margin-top: auto !important;
+  background-color: #335533;
+
+  a {
+    color: $white;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+form {
+  text-align: left;
+}
