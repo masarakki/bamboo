@@ -1,0 +1,7 @@
+:schedule:
+  post_registration:
+    cron: '*/5 * * * *'
+    class: PostRegistrationScheduler
+  finalizer:
+    cron: '5 0 1 8 *'
+    class: FinaizeScheduler

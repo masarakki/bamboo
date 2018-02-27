@@ -8,6 +8,10 @@ Vote = Struct.new(:id, :title, :image) do
     manifests.values
   end
 
+  def status_message
+    Kernel.format "#たけのこ党 マニフェスト【%s】に投票しました。皆様も清き一票を！ ta-%02d http://www.meiji.co.jp/sweets/chocolate/kinotake/cmp/2018senkyo/?link=kie18012504 #きのこたけのこ国民総選挙 pic.twitter.com/%s", title, id, image
+  end
+
   protected
 
   def self.manifests

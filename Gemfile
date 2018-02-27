@@ -8,6 +8,9 @@ end
 gem 'haml-rails'
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'twitter'
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
