@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :omniauthable, omniauth_providers: %i[twitter]
 
-  scope :votable, -> { not_voted.or(vote_expired) }
+  scope :votable, -> { not_voted.or(vote_expired).where.not(vote_id: nil) }
 
   scope :vote_expired, -> { where(arel_table[:voted_at].lt(24.hours.ago)) }
   scope :not_voted, -> { where(voted_at: nil) }
