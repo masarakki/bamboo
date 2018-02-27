@@ -1,1 +1,7 @@
 %h1 全自動たけのこ投票機
+
+- if user_signed_in?
+  %p hello, #{current_user.screen_name}
+- else
+  = link_to user_twitter_omniauth_authorize_path do
+    Login
