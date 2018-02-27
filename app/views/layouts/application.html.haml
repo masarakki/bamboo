@@ -1,0 +1,36 @@
+!!! 5
+%title 全自動たけのこ投票機
+
+= csrf_meta_tags
+= javascript_pack_tag 'application'
+= stylesheet_pack_tag 'application', media: 'all'
+
+.content
+  #header
+    %h1 全自動たけのこ投票機
+
+    %p.lead
+      我らたけのこ派の徹底的な勝利を目指して
+
+    %p.info
+      %a{href: 'http://www.meiji.co.jp/sweets/chocolate/kinotake/cmp/2018senkyo/'}
+        きのこの山たけのこの里 国民総選挙
+      で
+      %br
+      たけのこ派の勝利を支援するサービスです。
+      %br
+      毎日1回自動で投票ツイートします。
+
+
+  #main
+    = yield
+
+  #footer
+    .inner
+      %p
+        = link_to 'https://twitter.com/masarakki' do
+          @masarakki
+        = link_to 'https://github.com/masarakki/bamboo' do
+          ソースコード
+        = link_to 'http://amzn.asia/euVw2f9' do
+          Wishlist

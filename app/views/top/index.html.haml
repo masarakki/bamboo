@@ -1,10 +1,13 @@
-%h1 全自動たけのこ投票機
+
 
 - if user_signed_in?
-  %p hello, #{current_user.screen_name}
-  = form_for current_user, url: users_path do |f|
-    = f.select :vote_id, Vote.all.map {|x| [x.title, x.id]}, include_blank: true
-    = f.submit 'save'
+  %dl
+    %dt Twitter ID
+    %dd #{current_user.screen_name}
+    %dt 投票内容
+    %dd #{Vote.find(current_user.vote_id).title}
+
+  = link_to '変更', edit_users_path, class: 'btn btn-lg btn-secondary'
 - else
-  = link_to user_twitter_omniauth_authorize_path do
-    Login
+  = link_to user_twitter_omniauth_authorize_path, class: 'btn btn-lg btn-primary' do
+    Twitterでログイン
