@@ -2,6 +2,9 @@
 
 - if user_signed_in?
   %p hello, #{current_user.screen_name}
+  = form_for current_user, url: users_path do |f|
+    = f.select :vote_id, Vote.all.map {|x| [x.title, x.id]}, include_blank: true
+    = f.submit 'save'
 - else
   = link_to user_twitter_omniauth_authorize_path do
     Login
