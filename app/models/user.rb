@@ -16,4 +16,12 @@ class User < ApplicationRecord
                   secret_token: credentials.secret)
     end
   end
+
+  def vote
+    Vote.find(vote_id)
+  end
+
+  def vote?
+    vote_id.present?
+  end
 end
